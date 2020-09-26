@@ -12,7 +12,7 @@
 
     <link name="base_link">
         <visual>
-            <origin xyz="0.0 0.0 0.05199"/>
+            <origin xyz="0.0 0.0 0.05949"/>
             <geometry>
                 <cylinder length="0.10938" radius="0.178"/>
             </geometry>
@@ -21,7 +21,7 @@
             </material>
         </visual>
         <collision>
-            <origin xyz="0.0 0.0 0.05199"/>
+            <origin xyz="0.0 0.0 0.05949"/>
             <geometry>
                 <cylinder length="0.10938" radius="0.178"/>
             </geometry>
@@ -61,7 +61,7 @@
     </link>
 
     <joint name="sphere_joint2" type="fixed">
-        <origin xyz="-0.115 0.0 0.007" rpy="0.0 0.0 0.0"/>
+        <origin xyz="-0.115 0.0 0.009" rpy="0.0 0.0 0.0"/>
         <parent link="base_link"/>
         <child link="sphere_link2"/>
     </joint>
