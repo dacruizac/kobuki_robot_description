@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="kobuki_robot_description" type="kobuki_teleop_node.py" name="teleoperation_node"/>
+
+    <node pkg="kobuki_robot_description" type="kobuki_control_node.py" name="control_node" />
+</launch>
