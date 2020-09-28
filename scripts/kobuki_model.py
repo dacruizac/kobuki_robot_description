@@ -11,11 +11,11 @@ class kobuki_model_V1:
 
         alpha_right =  -np.pi/2
         beta_right  =  np.pi 
-        l_right     =  0.150#0.115
+        l_right     =  0.115
 
         alpha_left = np.pi/2
         beta_left  = 0
-        l_left     = 0.080#0.115
+        l_left     = 0.115
 
         J1 = np.array( [( np.sin(alpha_right+beta_right), -l_right*np.cos(beta_right)),
                         ( np.sin(alpha_left+beta_left)  , -l_left*np.cos(beta_left))])
