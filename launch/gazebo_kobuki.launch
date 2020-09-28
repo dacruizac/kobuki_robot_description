@@ -20,24 +20,13 @@
     />  
 
     <!-- Publica transformaciones entre marcos de referencia fijos -->
-    <node pkg="robot_state_publisher" type="robot_state_publisher" name="rob_pub" />
+    <!--node pkg="robot_state_publisher" type="robot_state_publisher" name="rob_pub" /-->
 
     <node pkg="rviz" type="rviz" name="rviz" args="-d $(find kobuki_robot_description)/rviz/config_rviz2.rviz"/>
     
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="use_sim_time" value="true"/>
     </include> 
-    
-    <node 
-        name="spawner_ctrols" 
-        pkg="controller_manager" 
-        type="spawner" 
-        respawn="false"
-        output="screen"
-        args="  joint_st_controller
-                left_wheel_controller
-                right_wheel_controller"
-    />
 
     <!--include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="use_sim_time" value="true"/>
@@ -53,5 +42,28 @@
                 -urdf
                 -model kobuki"
     />
+
+    <node 
+        name="spawner_ctrols" 
+        pkg="controller_manager" 
+        type="spawner" 
+        respawn="false"
+        output="screen"
+        args="  joint_st_controller
+                left_wheel_controller
+                right_wheel_controller"
+    />
+
+    <!--node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	output="screen" ns="/kobuki_v1" args="joint_st_controller
+					  left_wheel_controller
+					  right_wheel_controller"/-->
+
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+	respawn="false" output="screen">
+    <remap from="/joint_states" to="/kobuki/joint_states" />
+    </node>
+
 
 </launch>
